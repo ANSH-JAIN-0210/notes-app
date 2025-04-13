@@ -54,7 +54,7 @@ const Signin = ({ setAuth }) => {
           placeholder="Password"
           required
         />
-        <div>Not have an Account? <a href='http://localhost:3000'>Create a new Account</a></div>
+        <div>Not have an Account? <a href='http://localhost:3000/signup'>Create a new Account</a></div>
         <button type="submit">Sign In</button>
       </form>
     </div>
