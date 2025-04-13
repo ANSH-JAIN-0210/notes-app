@@ -23,4 +23,4 @@ app.use('/api',noteRoutes)
 
 
 const port = process.env.PORT || 5000
-app.listen(5000,()=>console.log('Connected to Server on port 5000'))
+app.listen(port,()=>console.log('Connected to Server on port 5000'))
