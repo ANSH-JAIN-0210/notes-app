@@ -23,7 +23,7 @@ const Signin = ({ setAuth }) => {
     e.preventDefault();
     setError('');
     try {
-      const res = await axios.post('http://localhost:5000/api/signin', credentials);
+      const res = await axios.post('https://notes-app-u7f0.onrender.com/api/signin', credentials);
       const tokenExpiry = new Date().getTime() + 3 * 60 * 60 * 1000;
       localStorage.setItem('authData', JSON.stringify({ token: res.data.token, expiry: tokenExpiry, credentials}));
       setAuth(true);

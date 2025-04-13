@@ -6,7 +6,11 @@ const userRoutes = require('./routes/UserRoutes')
 const noteRoutes = require('./routes/NoteRoutes')
 
 const app = express();
-app.use(cors());
+app.use(
+    cors({
+      origin: "*",
+    })
+  );
 app.use(bodyparser.json())
 
 mongoose.connect('mongodb://localhost:27017/note',{

@@ -22,7 +22,7 @@ const Note = () => {
       try {
         if (!authData || !authData.token) throw new Error('User not authenticated');
 
-        const res = await axios.get('http://localhost:5000/api/notes', {
+        const res = await axios.get('https://notes-app-u7f0.onrender.com/api/notes', {
           headers: { Authorization: `Bearer ${authData.token}` },
         });
         setNotes(res.data);
@@ -52,7 +52,7 @@ const Note = () => {
       if (editingNoteId) {
         // Update Note
         const res = await axios.put(
-          `http://localhost:5000/api/notes/${editingNoteId}`,
+          `https://notes-app-u7f0.onrender.com/api/notes/${editingNoteId}`,
           {
             note_name: newNote.name,
             note_tag: newNote.tag,
@@ -65,7 +65,7 @@ const Note = () => {
       } else {
         // Add New Note
         const res = await axios.post(
-          'http://localhost:5000/api/notes',
+          'https://notes-app-u7f0.onrender.com/api/notes',
           {
             note_name: newNote.name,
             note_tag: newNote.tag,
@@ -100,7 +100,7 @@ const Note = () => {
     try {
       if (!authData || !authData.token) throw new Error('User not authenticated');
 
-      await axios.delete(`http://localhost:5000/api/notes/${noteId}`, {
+      await axios.delete(`https://notes-app-u7f0.onrender.com/api/notes/${noteId}`, {
         headers: { Authorization: `Bearer ${authData.token}` },
       });
 
